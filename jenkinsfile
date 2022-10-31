@@ -7,6 +7,7 @@ pipeline {
         script {
           sh 'cd /home/ubuntu/repos/web-server-teste && git pull'
         }
+      }
     }
     stage('PM2 ADD') {
       steps {
