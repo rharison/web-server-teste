@@ -2,8 +2,12 @@ pipeline {
   agent any
 
   stages {
+
     stage('GIT PULL') {
       steps {
+        script {
+          sh 'git config --global --add safe.directory /home/ubuntu/repos/web-server-teste'
+        }
         script {
           sh 'cd /home/ubuntu/repos/web-server-teste && git pull'
         }
