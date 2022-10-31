@@ -2,15 +2,16 @@ pipeline {
   agent any
 
   stages {
-    stage('Inicial') {
+    stage('GIT PULL') {
       steps {
-        echo 'Jamel...'
-      }
+        script {
+          sh 'cd /home/ubuntu/repos/web-server-teste && git pull'
+        }
     }
     stage('PM2 ADD') {
       steps {
         script {
-          sh 'cd /home/ubuntu/repos/web-server-teste && npm i && npm start'
+          sh 'cd /home/ubuntu/repos/web-server-teste && npm start'
         }
       }
     }

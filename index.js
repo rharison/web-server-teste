@@ -1,3 +1,14 @@
+import express from 'express';
 
+(async () => {
+  const app = express();
+  const port = 5555;
 
-console.log('JAMEEEEEEEEL')
+  app.get('/', (req, res) => {
+    res.send('Hello World!');
+  });
+
+  app.listen(port, () => {
+    console.log(`Server http listening at http://localhost:${port}`);
+  });
+})()
