@@ -7,13 +7,13 @@ pipeline {
         echo 'Jamel...'
       }
     }
-    stage('PM2 ADD') {
-      steps {
-        script {
-          sh 'pm2 start index.js'
-        }
-      }
-    }
+    // stage('PM2 ADD') {
+    //   steps {
+    //     script {
+    //       sh 'pm2 start index.js'
+    //     }
+    //   }
+    // }
     stage('Deploy') {
       steps {
         echo 'Deploying...'
