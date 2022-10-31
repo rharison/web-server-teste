@@ -10,7 +10,7 @@ pipeline {
     stage('PM2 ADD') {
       steps {
         script {
-          sh 'cd /home/ubuntu/repos/web-server-teste && node app.js'
+          sh 'cd /home/ubuntu/repos/web-server-teste && node index.js'
         }
       }
     }
