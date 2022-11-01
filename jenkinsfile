@@ -8,6 +8,9 @@ pipeline {
       stage('GIT PULL') {
         steps {
           script {
+            sh 'cd /home/ubuntu/repos/web-server-teste && git clean -f'
+          }
+          script {
             sh 'cd /home/ubuntu/repos/web-server-teste && git pull'
           }
         }
