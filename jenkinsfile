@@ -18,6 +18,9 @@ pipeline {
           script {
             sh ' pm2 start index.js'
           }
+          script {
+            sh ' pm2 log'
+          }
         }
       }
 
