@@ -14,10 +14,10 @@ pipeline {
     stage('PM2 START') {
       steps {
         script {
-          sh 'cd /home/ubuntu/repos/web-server-teste && pm2 start index.js'
+          sh 'cd /home/ubuntu/repos/web-server-teste && npm install'
         }
         script {
-          sh 'pm2 log'
+          sh ' pm2 start index.js'
         }
       }
     }
