@@ -1,7 +1,8 @@
 pipeline {
   agent any
-      env.NODEJS_HOME = "${tool 'NodeJsv12.16.2'}"
-    env.PATH="${env.NODEJS_HOME}/bin:${env.PATH}"
+  tools {
+    nodejs '17.0.0'
+  }
   stages {
     
       stage('GIT PULL') {
