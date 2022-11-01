@@ -8,7 +8,7 @@ pipeline {
       stage('Enter the directory') {
         steps {
           script {
-            sh 'su ubuntu'
+            sh 'cd /home/ubuntu/repos/web-server-teste'
           }
         }
       }
