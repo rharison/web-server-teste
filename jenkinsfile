@@ -8,19 +8,16 @@ pipeline {
       stage('GIT PULL') {
         steps {
           script {
-            sh 'pwd'
+            sh 'git checkout .'
           }
           script {
-            sh ' git pull'
+            sh 'git pull'
           }
         }
       }
 
       stage('PM2 START') {
         steps {
-          script {
-            sh 'node -v'
-          }
           script {
             sh 'npm install'
           }
