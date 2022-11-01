@@ -2,6 +2,7 @@ pipeline {
   agent any
  
   stages {
+    node('SoFaltaEu_2') {
       stage('GIT PULL') {
         steps {
           script {
@@ -27,5 +28,7 @@ pipeline {
         }
       }
     }
+    }
+
 
 }
