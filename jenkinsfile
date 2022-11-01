@@ -8,10 +8,10 @@ pipeline {
       stage('GIT PULL') {
         steps {
           script {
-            sh 'cd /home/ubuntu/repos/web-server-teste && git checkout .'
+            sh 'git checkout .'
           }
           script {
-            sh 'cd /home/ubuntu/repos/web-server-teste && git pull'
+            sh ' git pull'
           }
         }
       }
@@ -22,7 +22,7 @@ pipeline {
             sh 'node -v'
           }
           script {
-            sh 'cd /home/ubuntu/repos/web-server-teste && npm install'
+            sh 'npm install'
           }
           script {
             sh 'node index.js'
