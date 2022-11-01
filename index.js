@@ -6,6 +6,7 @@ import express from 'express';
 
   app.get('/', (req, res) => {
     res.send('Hello World!');
+    console.log('JAMEEEEEEEEEEEEEEEEEEEEEEEEEEEEL')
   });
 
   app.listen(port, () => {

@@ -2,10 +2,10 @@ pipeline {
   agent any
 
   stages {
-    stage('PWD') {
+    stage('GIT PULL') {
       steps {
         script {
-          sh 'pwd'
+          sh 'cd /home/ubuntu/repos/web-server-teste && git pull'
         }
       }
     }
