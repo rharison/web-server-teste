@@ -8,7 +8,7 @@ pipeline {
       stage('GIT PULL') {
         steps {
           script {
-            sh 'git checkout .'
+            sh 'pwd'
           }
           script {
             sh ' git pull'
