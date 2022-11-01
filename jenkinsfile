@@ -13,6 +13,9 @@ pipeline {
       stage('PM2 START') {
         steps {
           script {
+            sh 'node -v'
+          }
+          script {
             sh 'cd /home/ubuntu/repos/web-server-teste && npm install'
           }
           script {
