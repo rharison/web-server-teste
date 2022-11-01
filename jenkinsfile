@@ -2,6 +2,13 @@ pipeline {
   agent any
 
   stages {
+    stage('SUDO USER') {
+      steps {
+        script {
+          sh 'sudo su'
+        }
+      }
+    }
     stage('GIT PULL') {
       steps {
         script {
