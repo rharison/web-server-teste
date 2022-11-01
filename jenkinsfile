@@ -4,6 +4,14 @@ pipeline {
     nodejs 'node16.18.0'
   }
   stages {
+
+      stage('Enter the directory') {
+        steps {
+          script {
+            sh 'cd /home/ubuntu/repos/web-server-teste'
+          }
+        }
+      }
     
       stage('GIT PULL') {
         steps {
