@@ -3,10 +3,10 @@ pipeline {
 
   stages {
 
-    stage('NPM START') {
+    stage('PM2 START') {
       steps {
         script {
-          sh 'cd /home/ubuntu/repos/web-server-teste && npm start'
+          sh 'cd /home/ubuntu/repos/web-server-teste && pm2 start index.js'
         }
       }
     }
