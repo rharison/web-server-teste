@@ -1,7 +1,10 @@
 pipeline {
   agent any
- 
+  node {
+    env.NODEJS_HOME = "${tool 'NodeJsv12.16.2'}"
+    env.PATH="${env.NODEJS_HOME}/bin:${env.PATH}"
   stages {
+
       stage('GIT PULL') {
         steps {
           script {
@@ -30,6 +33,7 @@ pipeline {
           echo 'Deploying...'
         }
       }
-    }
+  }
+  }
 
 }
