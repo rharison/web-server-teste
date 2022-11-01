@@ -16,11 +16,9 @@ pipeline {
             sh 'cd /home/ubuntu/repos/web-server-teste && npm install'
           }
           script {
-            sh ' pm2 start index.js'
+            sh 'node index.js'
           }
-          script {
-            sh ' pm2 log'
-          }
+
         }
       }
 
