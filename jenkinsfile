@@ -1,30 +1,33 @@
 pipeline {
   agent any
-
+ 
   stages {
+    node('SoFaltaEu_2'){
+      stage('GIT PULL') {
+        steps {
+          script {
+            sh 'cd /home/ubuntu/repos/web-server-teste && git pull'
+          }
+        }
+      }
 
-    stage('GIT PULL') {
-      steps {
-        script {
-          sh 'cd /home/ubuntu/repos/web-server-teste && git pull'
+      stage('PM2 START') {
+        steps {
+          script {
+            sh 'cd /home/ubuntu/repos/web-server-teste && npm install'
+          }
+          script {
+            sh ' pm2 start index.js'
+          }
+        }
+      }
+
+      stage('Deploy') {
+        steps {
+          echo 'Deploying...'
         }
       }
     }
 
-    stage('PM2 START') {
-      steps {
-        script {
-          sh 'cd /home/ubuntu/repos/web-server-teste && npm install'
-        }
-        script {
-          sh ' pm2 start index.js'
-        }
-      }
-    }
-    stage('Deploy') {
-      steps {
-        echo 'Deploying...'
-      }
-    }
   }
 }
